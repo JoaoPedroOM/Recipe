@@ -1,4 +1,4 @@
-export const API_URL = "http://localhost:1337/api/recipes";
+export const API_URL = "http://localhost:1337/api/recipes?populate=*";
 
 export function RECIPE_GET() {
   return {

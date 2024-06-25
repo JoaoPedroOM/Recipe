@@ -1,21 +1,32 @@
 import React from 'react'
+import { Link } from "react-router-dom";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
-const MainCard = () => {
+
+const MainCard = ({data}) => {
+  const content = data.attributes.recipeContent;
   return (
-    <div className='flex flex-col lg:flex-row items-center max-w-[90%] bg-[#f2f2f2] rounded-md cursor-pointer'>
-      <div className='w-full lg:w-1/2'>
+    <Link to={`/receita/${data.id}`} className='flex flex-col lg:flex-row items-center max-w-[90%] max-h-[410px] bg-[#f2f2f2] rounded-md cursor-pointer'>
+      <div className='w-full lg:w-1/2 h-full'>
         <img 
-          src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1989&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' 
+          src={`http://localhost:1337${data.attributes.coverImage.data.attributes.url}`}
           alt='bolo de chocolate' 
           className='object-cover w-full h-full lg:rounded-tl-md lg:rounded-bl-md rounded-tl-md rounded-tr-md'
         />
       </div>
-      <div className='p-3 w-full lg:w-1/2'>
-        <span className='uppercase italic'>April 19, 2024</span>
-        <h2 className='text-4xl font-bold'>Receita de bolo de cenoura</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae et possimus corporis modi eius, odio aperiam amet optio ad illum laboriosam perspiciatis vero quidem consectetur veniam dicta aspernatur doloribus magnam!</p>
+      <div className='p-3 w-full lg:w-1/2 bg-[#f2f2f2] '>
+        <span className='uppercase italic'>{data.attributes.publishedDate}</span>
+        <h2 className='text-4xl font-bold'>{data.attributes.recipeTitle}</h2>
+        <div className="line-clamp-4">
+        <BlocksRenderer
+          content={content}
+          blocks={{
+            paragraph: ({ children }) => <p>{children}</p>,
+          }}
+        />
+        </div>
       </div>
-    </div>
+    </Link>
   )
 }
 

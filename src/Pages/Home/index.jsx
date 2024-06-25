@@ -1,19 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useContext } from 'react';
 import Header from "../../components/Header";
-import useFetch from "../../Hooks/useFetch";
-import { RECIPE_GET } from '../../Api/api';
 import CardSection from '../../components/CardSection';
+import { ApiContext } from "../../Hooks/useContext"
 
 const Index = () => {
-  const { data, loading, error, request } = useFetch();
-
-  useEffect(() => {
-    async function fetchRecipe() {
-      const { url, options } = RECIPE_GET();
-      await request(url, options);
-    }
-    fetchRecipe();
-  }, [request]);
+  const { data, loading, error } = useContext(ApiContext);
 
   return (
     <div>
