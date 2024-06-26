@@ -11,7 +11,7 @@ const Footer = () => {
           <img src={Logo} alt="Logo Chef House" />
         </div>
 
-        <div className="border-t border-[#1D060526] w-full flex justify-center pt-2 lg:border-none lg:pt-0">
+        <div className="border-t border-[#1D060526] w-full flex justify-center pt-2 lg:border-none lg:pt-0 font-carne">
           <ul className="flex gap-2">
             <li className="hover:font-bold">
               <a href="/">Home</a>
@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="max-w-[1240px] mx-auto text-center">
+      <div className="max-w-[1240px] mx-auto text-center font-poppins">
         <p className="text-[14px] w-full border-t border-[#1D060526] py-[12px]">
           <span className="text-black font-bold">2024 © Chef House.</span> Todos
           os direitos reservados.

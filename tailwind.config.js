@@ -5,6 +5,8 @@ export default {
     extend: {
       fontFamily: {
         main: ["Playwrite MX"],
+        carne: ["Carme"],
+        poppins: ["Poppins"],
       },
     },
     plugins: [

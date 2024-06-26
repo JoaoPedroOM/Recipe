@@ -13,7 +13,7 @@ const CardSection = ({ posts }) => {
 
   return (
     <section className="pt-[120px] max-w-[1240px] mx-auto mb-32" id="receitas">
-      <h1 className="text-2xl  font-bold mb-3 text-center lg:text-start font-main">
+      <h1 className="text-2xl  font-bold mb-3 text-center lg:text-start font-carne text-[#302414]">
         Receitas do Dia
       </h1>
       <div className="flex justify-center max-[450px]:mb-[40px] max-[640px]:mb-[150px] sm:mb-[180px] md:mb-[200px] lg:mb-5">

@@ -17,15 +17,15 @@ const Cards = ({ data }) => {
       </div>
       <div className="h-1/2 flex flex-col justify-center p-2">
         <div className="w-full flex items-center justify-between mb-2">
-          <span className="bg-orange-300 px-2 rounded-full font-bold text-[12px] flex items-center">
+          <span className="bg-orange-300 px-2 rounded-full font-bold text-[12px] flex items-center font-poppins">
             {data.attributes.categoryType}
           </span>
-          <span className="uppercase italic text-[10px] lg:text-[15px]">
+          <span className="uppercase italic text-[10px] lg:text-[15px] font-poppins">
             {formatBrazilianDate(data.attributes.publishedDate)}
           </span>
         </div>
 
-        <h2 className="text-lg font-bold leading-[1]">{data.attributes.recipeTitle}</h2>
+        <h2 className="text-lg font-bold leading-[1] font-carne">{data.attributes.recipeTitle}</h2>
       </div>
     </Link>
   );

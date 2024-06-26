@@ -3,7 +3,7 @@ import React from "react";
 const Input = ({label, typeValue, name, valor}) => {
   return (
     <div className="mb-4">
-      <label className="block text-[1rem] leading-4 pb-2" htmlFor={name}>
+      <label className="block text-[1rem] leading-4 pb-2 font-carne" htmlFor={name}>
         {label}
       </label>
       <input

@@ -11,7 +11,7 @@ const Header = () => {
           <img src={Logo} alt="Logo chef house" className="w-20 h-20"/>
         </Link>
 
-        <Link to="/login" className="flex justify-center items-center gap-2 pr-3 lg:pr-0">
+        <Link to="/login" className="flex justify-center items-center gap-2 pr-3 lg:pr-0 font-carne">
           <span>Logar / Criar</span>
           <FaRegUser size={20}/>
         </Link>

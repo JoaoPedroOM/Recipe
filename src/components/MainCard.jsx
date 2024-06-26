@@ -27,8 +27,8 @@ const MainCard = ({ data }) => {
             {formatBrazilianDate(data.attributes.publishedDate)}
           </span>
         </div>
-        <h2 className="text-4xl font-bold">{data.attributes.recipeTitle}</h2>
-        <div className="line-clamp-4">
+        <h2 className="text-4xl font-bold font-carne">{data.attributes.recipeTitle}</h2>
+        <div className="line-clamp-4 font-poppins">
           <BlocksRenderer
             content={content}
             blocks={{

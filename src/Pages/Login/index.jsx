@@ -13,7 +13,7 @@ const index = () => {
 
 
         <div className="lg:w-full px-8 lg:pl-[120px] lg:mt-0 h-screen lg:h-auto mt-10">
-        <h1 className="text-bold font-main font-bold text-[32px] mb-7">Login</h1>
+        <h1 className="text-bold font-bold text-[32px] mb-7 font-carne">Login</h1>
           <form>
             <Input label="Usuário" typeValue="text" name="username" />
             <Input label="Senha" typeValue="password" name="password" />
