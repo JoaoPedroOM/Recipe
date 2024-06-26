@@ -12,11 +12,11 @@ const CardSection = ({ posts }) => {
   console.log(otherPosts);
 
   return (
-    <section className="pt-[120px] max-w-[1240px] mx-auto">
+    <section className="pt-[120px] max-w-[1240px] mx-auto mb-32" id="receitas">
       <h1 className="text-2xl  font-bold mb-3 text-center lg:text-start font-main">
         Receitas do Dia
       </h1>
-      <div className="flex justify-center mb-[250px] sm:mb-[180px] lg:mb-5">
+      <div className="flex justify-center mb-[200px] sm:mb-[180px] md:mb-[200px] lg:mb-5">
         <MainCard data={lastPost} />
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center gap-2 px-2 lg:gap-3">

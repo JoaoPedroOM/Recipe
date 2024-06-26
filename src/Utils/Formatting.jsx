@@ -7,6 +7,7 @@ const Formatting = ({content}) => {
     <BlocksRenderer
               content={content}
               blocks={{
+                image: ({ image }) => <img src={image.url} alt={image.alternativeText} className='shadow-md'/>,
                 paragraph: ({ children }) => <p>{children}</p>,
                 code:({children}) => <pre className="bg-[#eee] px-[3px] rounded-sm">{children}</pre>,
                 heading: ({ children, level }) => {

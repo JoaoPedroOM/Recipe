@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import Header from "../../components/Header";
 import CardSection from '../../components/CardSection';
 import { ApiContext } from "../../Hooks/useContext"
+import Footer from '../../components/Footer';
 
 const Index = () => {
   const { data, loading, error } = useContext(ApiContext);
@@ -18,6 +19,7 @@ const Index = () => {
           data && <CardSection posts={data}/>
         )}
       </main>
+      <Footer/>
     </div>
   );
 };

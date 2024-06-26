@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Cards = ({ data }) => {
   return (
-      <Link to={`/receita/${data.id}`} className="flex flex-col rounded-md bg-[#f2f2f2] max-w-[550px] w-full h-[250px] cursor-pointer hover:scale-105 ease-in duration-200">
+      <Link to={`/receita/${data.id}`} className="flex flex-col rounded-md bg-[#f2f2f2] max-w-[550px] w-full h-[250px] cursor-pointer hover:scale-105 ease-in duration-200 shadow-md">
         <div className="h-1/2">
           <img
             src={`http://localhost:1337${data.attributes.coverImage.data.attributes.url}`}

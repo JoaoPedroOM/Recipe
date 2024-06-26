@@ -4,6 +4,7 @@ import { ApiContext } from "../../Hooks/useContext";
 import { useParams } from "react-router-dom";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import Formatting from "../../Utils/Formatting";
+import Footer from "../../components/Footer";
 
 const Index = () => {
   const params = useParams();
@@ -20,7 +21,7 @@ const Index = () => {
     return (
       <>
         <Header />
-        <div className="max-w-[1240px] mx-auto pt-[80px] px-5 lg:pt-[120px]">
+        <div className="max-w-[1240px] mx-auto pt-[80px] px-5 lg:pt-[120px] mb-40">
           <h1 className="text-gray-900 text-4xl sm:text-5xl font-black">
             {post.attributes.recipeTitle} <br />
           </h1>
@@ -30,6 +31,7 @@ const Index = () => {
            <Formatting content={content}/>
           </div>
         </div>
+        <Footer/>
       </>
     );
   } else if (error) {
