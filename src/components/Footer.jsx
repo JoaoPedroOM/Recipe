@@ -5,7 +5,7 @@ import Logo from "../assets/img/logo.svg";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="bg-gray-500/10">
       <div className="max-w-[1240px] mx-auto flex flex-col gap-2 justify-center items-center mb-3 lg:flex-row lg:justify-between">
         <div className="max-w-[80px]">
           <img src={Logo} alt="Logo Chef House" />
