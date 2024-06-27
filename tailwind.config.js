@@ -8,6 +8,10 @@ export default {
         carne: ["Carme"],
         poppins: ["Poppins"],
       },
+      boxShadow: {
+        'button': '0 0 0 3px #fdb75d, 0 0 0 4px #ffa411',
+        'inputSd': '0 0 0 3px #fb1',
+      },
     },
     plugins: [
       require('@tailwindcss/typography'),
