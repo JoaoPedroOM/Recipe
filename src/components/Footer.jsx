@@ -5,7 +5,7 @@ import Logo from "../assets/img/logo.svg";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-500/10">
+    <footer className="bg-gray-500/10 inset-x-0 bottom-0 shadow-lg mt-auto h-auto">
       <div className="max-w-[1240px] mx-auto flex flex-col gap-2 justify-center items-center mb-3 lg:flex-row lg:justify-between">
         <div className="max-w-[80px]">
           <img src={Logo} alt="Logo Chef House" />
@@ -30,7 +30,7 @@ const Footer = () => {
             <FaGithub size={25} />
           </a>
           <a
-            href="https://www.linkedin.com/in/jo%C3%A3o-pedro-909822252"
+            href="www.linkedin.com/in/joaopedroom"
             target="_blank"
           >
             <FaLinkedin size={25} />

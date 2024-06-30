@@ -21,7 +21,7 @@ const MainCard = ({ data }) => {
       <div className="p-3 w-full lg:w-1/2 bg-[#f2f2f2] rounded-bl-md rounded-br-md lg:rounded-none ">
         <div className="flex items-center gap-2">
           <span className="bg-orange-300 px-2 rounded-full font-bold text-[12px] items-center inline-block">
-            {data.attributes.categoryType}
+            {data.attributes.Type}
           </span>
           <span className="uppercase italic">
             {formatBrazilianDate(data.attributes.publishedDate)}
