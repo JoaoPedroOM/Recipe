@@ -13,7 +13,7 @@ const LoginForm = () => {
   const { data, loading, error, request } = useFetch();
   const [user, setUser] = useState(initialUser);
   const [loginRequested, setLoginRequested] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
@@ -45,23 +45,22 @@ const LoginForm = () => {
   };
 
   useEffect(() => {
-    if(!loading && data){
-      console.log("Dados de login aqui:",  data);
-      if(data){
-        storeUser(data)
-        toast.success('Logado com sucesso!', {
-          hideProgressBar:true,
+    if (!loading && data) {
+      console.log("Dados de login aqui:", data);
+      if (data) {
+        storeUser(data);
+        toast.success("Logado com sucesso!", {
+          hideProgressBar: true,
         });
-        setUser(initialUser)
-        navigate('/')
-      }
-      else{
+        setUser(initialUser);
+        navigate("/");
+      } else {
         toast.error("Algo de errado aconteceu", {
           hideProgressBar: true,
         });
       }
     }
-  } ,[loading, data])
+  }, [loading, data]);
 
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 pt-[80px] items-center">

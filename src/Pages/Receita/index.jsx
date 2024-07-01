@@ -4,6 +4,7 @@ import { ApiContext } from "../../Hooks/useContext";
 import { useParams } from "react-router-dom";
 import Formatting from "../../Utils/Formatting";
 import Footer from "../../components/Footer";
+import RecipeComments from "../../components/Receita/RecipeComments";
 
 const Index = () => {
   const params = useParams();
@@ -31,6 +32,7 @@ const Index = () => {
             <div className="mx-auto max-w-[1000px] mt-[25px]">
               <Formatting content={content} />
             </div>
+           <RecipeComments id={postId} />
           </div>
         </div>
         <Footer />
