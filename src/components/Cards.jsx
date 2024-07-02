@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {formatBrazilianDate} from "../Utils/formatBrazilianDate"
 
-const Cards = ({ data }) => {
+const Cards = ({ data, find }) => {
+  const url = parseInt(find);
   return (
     <Link
-      to={`/receita/${data.id}`}
+      to={`/receita/${url}`}
       className="flex flex-col rounded-md bg-[#f2f2f2] max-w-[550px] w-full h-[250px] cursor-pointer hover:scale-105 ease-in duration-200 shadow-md"
     >
       <div className="h-1/2">

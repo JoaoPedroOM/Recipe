@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { userData } from "../../Helper/login";
 import { COMMENT_POST } from "../../Api/api";
+import Error from "../../Helper/Error"
 import useFetch from "../../Hooks/useFetch";
 
 const RecipeCommentsForm = ({ id, setComments }) => {
@@ -57,7 +58,7 @@ const RecipeCommentsForm = ({ id, setComments }) => {
       >
         Enviar
       </button>
-      {/* <Error error={error} /> */}
+      <Error error={error} />
     </form>
   );
 };

@@ -6,6 +6,7 @@ import Registro from "../Pages/Registro/index"
 import { ApiProvider } from "../Hooks/useContext";
 import { ToastContainer } from "react-toastify";
 import { Protector } from "../Helper/login"
+import Footer from "../components/Footer";
 
 export function AppRoutes() {
   return (
@@ -16,6 +17,7 @@ export function AppRoutes() {
           element={
             <Protector>
               <Home />
+              <Footer/>
             </Protector>
           }
         />
@@ -24,6 +26,7 @@ export function AppRoutes() {
           element={
             <Protector>
               <Receita />
+              <Footer/>
             </Protector>
           }
         />

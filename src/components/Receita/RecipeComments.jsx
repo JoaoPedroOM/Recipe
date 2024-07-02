@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import RecipeCommentsForm from "./RecipeCommentsForm";
 import useFetch from "../../Hooks/useFetch";
 import { COMMENT_GET } from "../../Api/api";
+import Error from "../../Helper/Error";
 
 const RecipeComments = (props) => {
   const [comments, setComments] = useState([]);
@@ -34,6 +35,7 @@ const RecipeComments = (props) => {
           </li>
         ))}
       </ul>
+      <Error error={error} />
       <RecipeCommentsForm setComments={setComments} id={props.id} />
     </div>
   );

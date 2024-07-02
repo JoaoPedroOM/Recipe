@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import {formatBrazilianDate} from "../Utils/formatBrazilianDate"
 
-const MainCard = ({ data }) => {
+const MainCard = ({ data, find }) => {
   const content = data.attributes.recipeContent;
   return (
     <Link
-      to={`/receita/${data.id}`}
+      to={`/receita/${find}`}
       className="flex flex-col lg:flex-row items-center min-w-[80%] max-h-[410px] lg:bg-[#f2f2f2] rounded-md cursor-pointer lg:hover:scale-105 ease-in duration-200 lg:shadow-md px-3 lg:px-0 "
     >
       <div className="w-full lg:w-1/2 h-full">

@@ -3,8 +3,8 @@ import Header from "../../components/Header";
 import { ApiContext } from "../../Hooks/useContext";
 import { useParams } from "react-router-dom";
 import Formatting from "../../Utils/Formatting";
-import Footer from "../../components/Footer";
 import RecipeComments from "../../components/Receita/RecipeComments";
+import Error from "../../Helper/Error";
 
 const Index = () => {
   const params = useParams();
@@ -12,13 +12,13 @@ const Index = () => {
 
   if (data) {
     const posts = data.data;
-    const postId = params.id;
-    const post = posts[postId - 1];
+    const postId = parseInt(params.id);
+    const post = posts[postId];
 
     const content = post.attributes.recipeContent;
 
     return (
-      <div className="flex flex-col min-h-screen">
+      <>
         <Header />
         <div className="flex-grow">
           <div className="max-w-[1240px] mx-auto pt-[80px] px-5 lg:pt-[120px] mb-40">
@@ -35,22 +35,20 @@ const Index = () => {
            <RecipeComments id={postId} />
           </div>
         </div>
-        <Footer />
-      </div>
+      </>
     );
   } else if (error) {
-    return <p>Infelizmente algo de errado aconteceu...</p>;
+    return <Error error={error} />;
   } else {
     return (
-      <div className="flex flex-col min-h-screen">
+      <>
         <Header />
         <div className="flex-grow">
           <div className="max-w-[1240px] mx-auto pt-[80px] px-5 lg:pt-[120px] text-gray-700 text-[25px] font-bold">
-            Carregando receitas...
+            Carregando receita...
           </div>
         </div>
-        <Footer />
-      </div>
+      </>
     );
   }
 };
