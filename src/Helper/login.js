@@ -28,3 +28,16 @@ export const Protector = ({ children }) => {
 
   return children;
 };
+
+export const ProtectorAccount = ({ children }) => {
+  const navigate = useNavigate();
+  const { jwt } = userData();
+
+  useEffect(() => {
+    if (jwt) {
+      navigate("/");
+    }
+  }, [navigate, jwt]);
+
+  return children;
+};

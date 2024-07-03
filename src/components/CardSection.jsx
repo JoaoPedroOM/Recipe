@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import Pagination from '@mui/material/Pagination';
 import Cards from "./Cards";
 import MainCard from "./MainCard";
 
 const CardSection = ({ posts }) => {
+  const [page, setPage] = useState(1);
+  const cardsPerPage = 4;
+
   if (!posts || !Array.isArray(posts.data)) {
     return null;
   }
@@ -10,6 +14,14 @@ const CardSection = ({ posts }) => {
   const lastPost = posts.data.slice(-1)[0];
   const otherPosts = posts.data.slice(0, -1);
   const reversedPosts = [...otherPosts].reverse();
+
+  const handleChange = (event, value) => {
+    setPage(value);
+  };
+
+  const indexOfLastCard = page * cardsPerPage;
+  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const currentCards = reversedPosts.slice(indexOfFirstCard, indexOfLastCard);
 
   return (
     <section className="pt-[120px] max-w-[1240px] mx-auto mb-32" id="receitas">
@@ -20,9 +32,21 @@ const CardSection = ({ posts }) => {
         <MainCard data={lastPost} find={posts.data.length - 1} />
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center gap-2 px-2 lg:gap-3">
-        {reversedPosts.map((post, index) => (
-          <Cards key={post.id} data={post} find={otherPosts.length - 1 - index} />
+        {currentCards.map((post, index) => (
+          <Cards key={post.id} data={post} find={otherPosts.length - 1 - indexOfFirstCard - index} />
         ))}
+      </div>
+      <div className="flex justify-center mt-4">
+        <Pagination
+          count={Math.ceil(reversedPosts.length / cardsPerPage)}
+          page={page}
+          onChange={handleChange}
+          sx={{
+            '& .MuiPaginationItem-root': {
+              color: '#FF7043',
+            },
+          }}
+        />
       </div>
     </section>
   );
