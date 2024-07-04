@@ -13,8 +13,8 @@ export default {
         'inputSd': '0 0 0 3px #fb1',
       },
     },
-    plugins: [
-      require('@tailwindcss/typography'),
-    ],
   },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };

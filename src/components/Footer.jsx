@@ -30,7 +30,7 @@ const Footer = () => {
             <FaGithub size={25} />
           </a>
           <a
-            href="www.linkedin.com/in/joaopedroom"
+            href="https://www.linkedin.com/in/joaopedroom/"
             target="_blank"
           >
             <FaLinkedin size={25} />

@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import Formatting from "../../Utils/Formatting";
 import RecipeComments from "../../components/Receita/RecipeComments";
 import Error from "../../Helper/Error";
+import Loading from "../../Helper/Loading";
+import Footer from "../../components/Footer";
 
 const Index = () => {
   const params = useParams();
@@ -18,7 +20,7 @@ const Index = () => {
     const content = post.attributes.recipeContent;
 
     return (
-      <>
+      <div className="flex flex-col min-h-screen">
         <Header />
         <div className="flex-grow">
           <div className="max-w-[1240px] mx-auto pt-[80px] px-5 lg:pt-[120px] mb-40">
@@ -32,23 +34,27 @@ const Index = () => {
             <div className="mx-auto max-w-[1000px] mt-[25px]">
               <Formatting content={content} />
             </div>
-           <RecipeComments id={postId} />
+            <RecipeComments id={postId} />
           </div>
         </div>
-      </>
+        <Footer />
+      </div>
     );
   } else if (error) {
-    return <Error error={error} />;
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="py-4 px-6 max-w-[1240px] mx-auto">
+          <Error error={error} />
+        </div>
+      </div>
+    );
   } else {
     return (
-      <>
-        <Header />
-        <div className="flex-grow">
-          <div className="max-w-[1240px] mx-auto pt-[80px] px-5 lg:pt-[120px] text-gray-700 text-[25px] font-bold">
-            Carregando receita...
-          </div>
+      <div className="flex items-center justify-center h-screen">
+        <div className="py-4 px-6 max-w-[1240px] mx-auto">
+          <Loading />
         </div>
-      </>
+      </div>
     );
   }
 };

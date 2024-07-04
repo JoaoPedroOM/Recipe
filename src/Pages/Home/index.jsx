@@ -14,12 +14,16 @@ const Index = () => {
       <Header />
       <main className="flex-grow">
         {error ? (
-          <Error error={error} />
+          <div className="flex items-center justify-center h-screen">
+            <div className="py-4 px-6 max-w-[1240px] mx-auto">
+              <Error error={error} />
+            </div>
+          </div>
         ) : loading ? (
           <div className="flex items-center justify-center h-screen">
-            <p className="py-4 px-6 max-w-[1240px] mx-auto">
-             <Loading/>
-            </p>
+            <div className="py-4 px-6 max-w-[1240px] mx-auto">
+              <Loading />
+            </div>
           </div>
         ) : (
           data && <CardSection posts={data} />
