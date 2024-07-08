@@ -1,6 +1,6 @@
 import React from "react";
 
-const Input = ({label, typeValue, name, value, onChange}) => {
+const Input = ({label, typeValue, name, value, onChange, error}) => {
   return (
     <div className="mb-4">
       <label className="block text-[1rem] leading-4 pb-2 font-carne" htmlFor={name}>
@@ -15,7 +15,7 @@ const Input = ({label, typeValue, name, value, onChange}) => {
         value={value}
         onChange={onChange}
       />
-      {/* {error && <p className="text-[#f31] text-[0.875rem] mt-1">{error}</p>} */}
+      {error && <p className="text-[#f31] text-[0.875rem] mt-1 max-w-[500px]">{error}</p>}
     </div>
   );
 };
