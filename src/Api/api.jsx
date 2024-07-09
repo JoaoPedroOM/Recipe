@@ -37,6 +37,20 @@ export function RECIPE_GET() {
   };
 }
 
+export function RECIPE_POST(body, jwt) {
+  return {
+    url: `${API_URL}recipes`,
+    options: {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${jwt}`,
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
+
 export function COMMENT_GET(id) {
   return {
     url: `${API_URL}recipes/${id}?populate=comments`,

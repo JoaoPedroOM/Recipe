@@ -9,6 +9,10 @@ const types = {
     regex: /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/,
     message: "Informe um email válido"
   },
+  title: {
+    regex: /^[\w\s'-]+$/u,
+    message: "O título deve conter apenas letras, números, espaços, hífens e apóstrofos."
+  }
 };
 
 const useForm = (type) => {
